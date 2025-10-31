@@ -48,7 +48,7 @@ class CategoryService {
     });
   }
 
-  async update(id, updateData) {
+async update(id, updateData) {
     return new Promise((resolve) => {
       setTimeout(() => {
         const categories = loadFromStorage(STORAGE.CATEGORIES) || categoriesData;
@@ -56,7 +56,7 @@ class CategoryService {
         if (categoryIndex !== -1) {
           const updatedCategory = { ...categories[categoryIndex], ...updateData };
           categories[categoryIndex] = updatedCategory;
-          saveToStorage(STORAGE.CATEGORIES, updatedCategories);
+          saveToStorage(STORAGE.CATEGORIES, categories);
           resolve({ ...updatedCategory });
         } else {
           resolve(null);
