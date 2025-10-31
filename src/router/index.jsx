@@ -100,10 +100,10 @@ export const router = createBrowserRouter([
         path: '/prompt-password/:appId/:emailAddress/:provider',
         element: <PromptPassword />,
       }),
-      createRoute({
+createRoute({
         path: '*',
         element: <NotFound />,
       }),
     ],
   },
-});
+]);
