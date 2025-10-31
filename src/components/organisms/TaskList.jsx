@@ -8,11 +8,11 @@ import Empty from "@/components/ui/Empty";
 import { taskService } from "@/services/api/taskService";
 
 const TaskList = ({ filter, onTaskUpdate }) => {
-  const [tasks, setTasks] = useState([]);
+const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const loadTasks = async () => {
+const loadTasks = async () => {
     try {
       setLoading(true);
       setError("");
@@ -50,8 +50,8 @@ const TaskList = ({ filter, onTaskUpdate }) => {
   }, [filter]);
 
   const handleToggleComplete = async (taskId, completed) => {
-    try {
-      await taskService.update(taskId, { completed });
+try {
+      await taskService.update(taskId, { completed_c: completed });
       await loadTasks();
       onTaskUpdate?.();
       
@@ -66,7 +66,7 @@ const TaskList = ({ filter, onTaskUpdate }) => {
     }
   };
 
-  const handleDeleteTask = async (taskId) => {
+const handleDeleteTask = async (taskId) => {
     if (!window.confirm("Are you sure you want to delete this task?")) {
       return;
     }
@@ -135,7 +135,7 @@ const TaskList = ({ filter, onTaskUpdate }) => {
   return (
     <div className="space-y-4">
       <AnimatePresence mode="popLayout">
-        {tasks.map((task) => (
+{tasks.map((task) => (
           <TaskCard
             key={task.Id}
             task={task}

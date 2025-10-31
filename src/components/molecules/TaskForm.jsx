@@ -8,12 +8,12 @@ import ApperIcon from "@/components/ApperIcon";
 import Card from "@/components/atoms/Card";
 
 const TaskForm = ({ onSubmit, loading = false }) => {
-  const [formData, setFormData] = useState({
-    title: "",
-    description: "",
-    dueDate: "",
-    priority: "",
-    categoryId: "",
+const [formData, setFormData] = useState({
+    title_c: "",
+    description_c: "",
+    due_date_c: "",
+    priority_c: "",
+    category_id_c: "",
   });
 
   const handleSubmit = async (e) => {
@@ -22,13 +22,13 @@ const TaskForm = ({ onSubmit, loading = false }) => {
 
     await onSubmit(formData);
     
-    // Reset form
+// Reset form
     setFormData({
-      title: "",
-      description: "",
-      dueDate: "",
-      priority: "",
-      categoryId: "",
+      title_c: "",
+      description_c: "",
+      due_date_c: "",
+      priority_c: "",
+      category_id_c: "",
     });
   };
 

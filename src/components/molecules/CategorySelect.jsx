@@ -3,10 +3,9 @@ import Select from "@/components/atoms/Select";
 import { categoryService } from "@/services/api/categoryService";
 
 const CategorySelect = ({ value, onChange, ...props }) => {
-  const [categories, setCategories] = useState([]);
-
+const [categories, setCategories] = useState([]);
   useEffect(() => {
-    const loadCategories = async () => {
+const loadCategories = async () => {
       try {
         const data = await categoryService.getAll();
         setCategories(data);
@@ -25,9 +24,9 @@ const CategorySelect = ({ value, onChange, ...props }) => {
       {...props}
     >
       <option value="">Select Category</option>
-      {categories.map((category) => (
+{categories.map((category) => (
         <option key={category.Id} value={category.Id}>
-          {category.name}
+          {category.name_c || category.Name}
         </option>
       ))}
     </Select>

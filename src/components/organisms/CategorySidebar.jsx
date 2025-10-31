@@ -7,13 +7,13 @@ import { taskService } from "@/services/api/taskService";
 const CategorySidebar = ({ 
   activeCategory, 
   onCategoryChange, 
-  isOpen, 
-  onClose 
+isOpen, 
+  onClose
 }) => {
   const [categories, setCategories] = useState([]);
   const [taskCounts, setTaskCounts] = useState({});
 
-  const loadCategories = async () => {
+const loadCategories = async () => {
     try {
       const categoryData = await categoryService.getAll();
       const taskData = await taskService.getAll();
@@ -22,10 +22,10 @@ const CategorySidebar = ({
       const counts = {};
       categoryData.forEach(category => {
         counts[category.Id] = taskData.filter(task => 
-          task.categoryId === category.Id && !task.completed
+          task.category_id_c?.Id === category.Id && !task.completed_c
         ).length;
       });
-      counts["all"] = taskData.filter(task => !task.completed).length;
+      counts["all"] = taskData.filter(task => !task.completed_c).length;
       
       setCategories(categoryData);
       setTaskCounts(counts);
@@ -39,10 +39,10 @@ const CategorySidebar = ({
   }, []);
 
   const allTasksItem = {
-    Id: "all",
-    name: "All Tasks",
-    color: "#6366F1",
-    icon: "List"
+Id: "all",
+    name_c: "All Tasks",
+    color_c: "#6366F1",
+    icon_c: "List"
   };
 
   return (
@@ -107,7 +107,7 @@ const CategorySidebar = ({
                       Categories
                     </h3>
                   </div>
-                  {categories.map((category) => (
+{categories.map((category) => (
                     <CategorySidebarItem
                       key={category.Id}
                       category={category}

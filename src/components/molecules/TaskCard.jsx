@@ -13,7 +13,7 @@ const TaskCard = ({ task, onToggleComplete, onDelete }) => {
 
   const handleToggleComplete = (e) => {
     const isCompleted = e.target.checked;
-    onToggleComplete(task.Id, isCompleted);
+onToggleComplete(task.Id, isCompleted);
     
     if (isCompleted) {
       setShowConfetti(true);
@@ -53,39 +53,39 @@ const TaskCard = ({ task, onToggleComplete, onDelete }) => {
 
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-4 mb-3">
-              <h3 className={`font-semibold text-lg leading-snug ${
-                task.completed ? "text-gray-500 line-through" : "text-gray-900"
+<h3 className={`font-semibold text-lg leading-snug ${
+                task.completed_c ? "text-gray-500 line-through" : "text-gray-900"
               }`}>
-                {task.title}
+                {task.title_c || task.Name}
               </h3>
               
               <div className="flex items-center gap-2 flex-shrink-0">
-                <Badge variant={getPriorityColor(task.priority)} size="sm">
-                  {task.priority}
+<Badge variant={getPriorityColor(task.priority_c)} size="sm">
+                  {task.priority_c}
                 </Badge>
                 
-                {task.dueDate && (
+{task.due_date_c && (
                   <Badge 
-                    className={getDueDateColor(task.dueDate)}
+                    className={getDueDateColor(task.due_date_c)}
                     size="sm"
                   >
-                    {formatDueDate(task.dueDate)}
+                    {formatDueDate(task.due_date_c)}
                   </Badge>
                 )}
               </div>
             </div>
 
-            {task.description && (
+{task.description_c && (
               <p className={`text-gray-600 mb-4 leading-relaxed ${
-                task.completed ? "line-through" : ""
+                task.completed_c ? "line-through" : ""
               }`}>
-                {task.description}
+                {task.description_c}
               </p>
             )}
 
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                {isOverdue(task.dueDate) && !task.completed && (
+<div className="flex items-center gap-2">
+                {isOverdue(task.due_date_c) && !task.completed_c && (
                   <div className="flex items-center gap-1 text-error text-sm">
                     <ApperIcon name="AlertCircle" className="w-4 h-4" />
                     <span>Overdue</span>
@@ -95,7 +95,7 @@ const TaskCard = ({ task, onToggleComplete, onDelete }) => {
               
               <Button
                 variant="ghost"
-                size="sm"
+size="sm"
                 onClick={() => onDelete(task.Id)}
                 className="text-gray-400 hover:text-error hover:bg-error/10"
               >
