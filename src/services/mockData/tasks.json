@@ -1,0 +1,57 @@
+[
+  {
+    "Id": 1,
+    "title": "Review quarterly reports",
+    "description": "Analyze Q4 performance metrics and prepare summary for management meeting",
+    "dueDate": "2024-01-15T09:00:00.000Z",
+    "priority": "high",
+    "categoryId": "work",
+    "completed": false,
+    "createdAt": "2024-01-10T10:30:00.000Z",
+    "completedAt": null
+  },
+  {
+    "Id": 2,
+    "title": "Grocery shopping",
+    "description": "Buy ingredients for weekend dinner party - check pantry first",
+    "dueDate": "2024-01-13T18:00:00.000Z",
+    "priority": "medium",
+    "categoryId": "personal",
+    "completed": false,
+    "createdAt": "2024-01-12T14:20:00.000Z",
+    "completedAt": null
+  },
+  {
+    "Id": 3,
+    "title": "Call dentist for appointment",
+    "description": "Schedule cleaning appointment for next month",
+    "dueDate": "2024-01-14T12:00:00.000Z",
+    "priority": "medium",
+    "categoryId": "personal",
+    "completed": true,
+    "createdAt": "2024-01-11T16:45:00.000Z",
+    "completedAt": "2024-01-12T09:15:00.000Z"
+  },
+  {
+    "Id": 4,
+    "title": "Update project documentation",
+    "description": "Add new API endpoints to developer documentation",
+    "dueDate": "2024-01-18T17:00:00.000Z",
+    "priority": "low",
+    "categoryId": "work",
+    "completed": false,
+    "createdAt": "2024-01-11T11:00:00.000Z",
+    "completedAt": null
+  },
+  {
+    "Id": 5,
+    "title": "Plan weekend hiking trip",
+    "description": "Research trails, check weather, pack gear",
+    "dueDate": "2024-01-20T08:00:00.000Z",
+    "priority": "low",
+    "categoryId": "personal",
+    "completed": false,
+    "createdAt": "2024-01-12T20:30:00.000Z",
+    "completedAt": null
+  }
+]
